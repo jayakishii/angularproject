@@ -1,0 +1,70 @@
+
+    h2{
+
+    display: flex;
+    justify-content: flex-start;
+    background-color: #212529;
+    color: white;
+    height: auto;
+    text-align: justify;
+    margin: auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    position: fixed ;
+    width: 100%;
+    text-size-adjust: 8px;
+    padding-bottom: 5px;
+
+    
+
+    }
+
+    h3{
+    
+            position: fixed;
+            height: auto;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            background-color: #212529;
+            color: white;
+            text-align: justify;
+            padding-left: 5px;
+            margin: auto;
+            padding-top: 5px;
+
+    }
+
+    .sidebar{
+        background-color: lightgray;
+        height: 90.5%;
+        width: 20%;;  
+        position: fixed;
+        margin-top: 25px;
+        padding-top: 30px;
+        
+        }
+.sidebar  a {
+    
+    text-decoration: none;
+    color: black;
+    border-radius: 3px;
+    border-width: 50px;
+    border-spacing: 10px;
+    text-size-adjust: 30px;
+    padding-left: 20px;
+    min-height: 100%;
+
+}
+a.home.active{
+    color: blue;
+}
+a.onboarding.active{
+    color: blue;
+}
+
+
+
+
+

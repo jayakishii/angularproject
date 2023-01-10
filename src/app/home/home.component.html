@@ -1,0 +1,47 @@
+
+<div class="container" style="width:100%;">
+    <h2 style="text-align: left">Customer Details</h2>
+    <hr style="width: 93.5%;">
+
+    <table class="table" style="width: 93.5%;">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name(Rs)</th>
+            <th>Gender</th>
+            <th>Skill</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>City</th>
+            <th>State</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+    
+            <tr *ngFor="let c of customers; ">
+                
+                <td>{{c['firstName']}}</td>
+                <td>{{c['lastName']}}</td>
+                <td>{{c['sex']}}</td>
+                <td>{{c['skill']}}</td>
+                <td>{{c['userName']}}</td>
+                <td>{{c['email']}}</td>
+                <td>{{c['city']}}</td>
+                <td>{{c['state']}}</td>
+                
+                <td>
+                  <label for=""><button class="btn btn-danger" (click)="deleteCustomer(c['id']) ">&#215; </button>Delete</label>
+                </td>
+
+                <td>
+                    <label for=""><button class="btn btn-danger" (click)="removeCustomer(id)">&#215; </button>Delete</label>
+                  </td>
+
+                
+    
+            </tr>
+        </tbody>
+      </table>
+    
+</div>

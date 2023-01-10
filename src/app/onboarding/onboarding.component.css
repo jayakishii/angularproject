@@ -1,0 +1,19 @@
+.container{
+    margin-left: 21.5%;
+    margin-top: 30px ;
+    position: fixed;
+  
+}
+.container h1{
+    
+}
+
+.invalid{
+    color: red;
+
+    background-color: rgba(128, 128, 128, 0.468);
+    align-items: center;
+    width: 93.5%;
+    
+    
+}

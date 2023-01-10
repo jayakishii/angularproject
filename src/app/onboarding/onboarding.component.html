@@ -1,0 +1,178 @@
+<div class="container" style="width:100%;">
+    <h2 style="text-align: left">Customer Onboarding</h2>
+    <hr style="width: 93.5%;">
+    <form action="" #r=ngForm>
+
+        <div *ngIf="r.controls['email']?.['touched'] && r.controls['email']?.['errors']" class="invalid" >
+            <div *ngIf="r.controls['email']?.['errors']?.['required']">
+               Error: Email is required
+            </div>
+            <div *ngIf="r.controls['email']?.['errors']?.['email']" > Error: Invali email</div>
+        </div>
+
+        <div *ngIf="r.controls['username']?.['touched'] && r.controls['username']?.['errors']" class="invalid" >
+            <div *ngIf="r.controls['username']?.['errors']?.['required']">
+                Error: Username is required
+            </div>
+            <div *ngIf="r.controls['username']?.['errors']?.['minlength']" > Error: minimum length 4 characters are required</div>
+        </div>
+
+
+        <div class="form-row" style="width: 93.5%;">
+            <div class="form-group col-md-12" style="width:50%; float: left; padding-right: 10px;">
+                <label for=""> First Name</label>
+                <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="customer.firstName" name="firstName" >
+            </div>
+            <div class="form-group col-md-12" style="width:50%; float:right">
+
+                <label for="">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="customer.lastName" name="lastName">
+
+            </div>
+        
+            
+
+            <div class="form-row" style="width: 93.5%;">
+                <div class="form-group col-md-12" style="width: 50%; float: left; padding-right: 10px; padding-top: 30px;">Sex
+                    <div class="form-check">
+                       
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="male" value="male" [(ngModel)]="customer.sex" >
+                        <label class="form-check-label" for="male">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="female" value="female" [(ngModel)]="customer.sex" >
+                        <label class="form-check-label" for="female">
+                            Female
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="other" value="other" [(ngModel)]="customer.sex" >
+                        <label class="form-check-label" for="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group" style="width: 50%; float: right;  padding-top: 30px; padding-left: 40px;" >
+                        <div >Skill</div>
+                        
+                        <div class="scrollable" style="overflow: scroll;overflow-x: hidden; height: 100px;">
+                           <li style="list-style: none;"> <label for="check1"><input type="checkbox" id="check1"  value="corejava"         [(ngModel)]="customer.skill" > Core Java</label> </li> 
+                           <li style="list-style: none;"> <label for="check2"><input type="checkbox" id="check2"   value="springboot"     [(ngModel)]="customer.skill"  > Springboot</label> </li>
+                           <li style="list-style: none;"> <label for="check3"><input type="checkbox" id="check3"   value="angular"        [(ngModel)]="customer.skill"  > Angular</label> </li>
+                           <li style="list-style: none;"> <label for="check4"><input type="checkbox" id="check4"   value="typescript"     [(ngModel)]="customer.skill"  > Typescript</label> </li>
+                           <li style="list-style: none;"> <label for="check5"><input type="checkbox" id="check5"   value="manualtesting"  [(ngModel)]="customer.skill"  > Manual testing</label> </li>
+                           <li style="list-style: none;"> <label for="check6"><input type="checkbox" id="check6"   value="automation"     [(ngModel)]="customer.skill"  > Automation testing</label> </li>
+                           
+                        </div>
+                </div>
+            </div>
+
+
+           
+              
+                  
+                    <div class="form-group col-md-12" style="width:50%; float: left; padding-right: 10px; padding-top: 30px;">
+                        <label for=""> User Name</label>
+                        <input type="text" class="form-control" placeholder="User Name" [(ngModel)]="customer.userName" name="username" minlength="4" required >
+                     </div>
+                    <div class="form-group col-md-12" style="width:50%; float:right; padding-top: 30px;">
+                        <label for="">Email ID</label>
+                        <div >
+                            <input type="email" class="form-control" placeholder="nirmal@gmail.com" [(ngModel)]="customer.email" name="email" required email>
+                           
+                        </div>
+                    </div>
+              
+            <div class="form-row" style="padding-top: 30px;">
+                
+                    <div class="formgroup" style="padding-top: 30px;">
+                        <div class="form-group col-md-12" style="width:50%; float: left; padding-right: 10px; padding-top: 30px;">
+                            <label for=""> Address1</label>
+                            <input type="text" class="form-control" placeholder="1234 Main St." [(ngModel)]="customer.address" name="address">
+                        </div>
+                        <div class="form-group col-md-12" style="width:50%; float:right; padding-top: 30px;">
+                            <label for="">Address2</label>
+                            <input type="text" class="form-control" placeholder="Appartment,studio, or floor" [(ngModel)]="customer.address2" name="address2">
+                        </div>
+                    </div>
+            </div>
+
+                <div class="form-group col-md-12" style="width:50%; float: left; padding-right: 10px; padding-top: 30px;">
+                    <label for=""> City</label>
+                    <input type="text" class="form-control" placeholder=" " [(ngModel)]="customer.city" name="city">
+                </div>
+
+                <div class="form-group col-md-12" style="width:20%; float:right; padding-top: 30px; padding-left: 2px;">
+    
+                    <label for="">Pincode</label>
+                    <input type="pincode" class="form-control" placeholder=" " [(ngModel)]="customer.pincode" name="pincode">
+    
+                </div>
+
+                <div class="form-group col-md-12" style="width:30%; float:right; padding-top: 30px; padding-right: 10px;">
+    
+                    <label for="state">State</label>
+                    <select  name="state" id="state" class="form-control" [(ngModel)]="customer.state"  >
+                        <option value="Choose">Choose state...</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        </select>
+    
+                </div>
+
+                    <div class="button" >
+                        <button class="btn btn-secondary" type="reset" style="margin-top: 10px;" (click)="resetform()" > Cancel</button>
+                        <button class="btn btn-primary" type="submit" style="margin-top: 10px; margin-left: 10px;" [disabled]="r.invalid" (click)="addCustomer(r)"> Submit</button>
+                    </div>
+            
+
+                   
+
+                
+                
+                
+            
+            
+
+
+
+        </div>
+        
+    </form>
+</div>
